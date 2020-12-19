@@ -1,6 +1,8 @@
 node_modules/
+client/node_modules/
 config/default.json
 
 resources/
+# misc
 .DS_Store
-client/node_modules/
+client/.eslintcache
