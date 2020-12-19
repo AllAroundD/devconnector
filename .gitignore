@@ -1,2 +1,6 @@
 node_modules/
 config/default.json
+
+resources/
+.DS_Store
+client/node_modules/
