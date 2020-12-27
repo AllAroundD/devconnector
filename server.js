@@ -1,7 +1,9 @@
 const express = require('express')
 const connectDB = require('./config/db')
+// const logger = require("morgan");
 
 const app = express()
+// app.use(logger("dev"));
 
 // Connect Database
 connectDB()
