@@ -93,7 +93,7 @@ router.delete('/:id', auth, async (req, res) => {
 
         await post.remove()
 
-        res.json({ msg: 'Post removed' })
+        return res.json({ msg: 'Post removed' })
     } catch (err) {
         console.error(err.message)
         if(err.kind === 'ObjectId') {
