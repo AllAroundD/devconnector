@@ -1,7 +1,9 @@
 node_modules/
 client/node_modules/
 config/default.json
+config/production.json
 
+client/build
 resources/
 # misc
 .DS_Store
