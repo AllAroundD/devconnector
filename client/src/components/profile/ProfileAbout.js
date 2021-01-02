@@ -8,13 +8,13 @@ const ProfileAbout = ({ profile: {
 }}) => <div className="profile-about bg-light p-2">
     {bio && (
         <Fragment>
-            <h2 className="text-primary">{name.trim().split(' ')[0]}'s Bio</h2>
-            <p>{bio}</p>
-            <div className="line"></div>
+            <h2 className="text-primary profileabout">{name.trim().split(' ')[0]}'s Bio</h2>
+            <p className="profileabout">{bio}</p>
+            <div className="line profileabout"></div>
         </Fragment>
     )}
-        <h2 className="text-primary">Skill Set</h2>
-        <div className="skills">
+        <h2 className="text-primary profileabout">Skill Set</h2>
+        <div className="skills  profileabout__bio">
             {skills.map((skill, index) => (
                 <div key={index} className="p-1">
                     <i className="fa fa-check"></i> {skill}

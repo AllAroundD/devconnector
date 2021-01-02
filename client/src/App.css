@@ -21,6 +21,37 @@ body {
   color: #333;
 }
 
+.dark {
+  background: black;
+}
+
+.dark h1, 
+.dark h2, 
+.dark p, 
+.dark .text-primary,
+.dark .large,
+.dark tbody,
+.dark .profile-github .text-primary,
+.dark .lead .fa-user {
+  color: white;
+}
+
+.dark .my-1, 
+.dark .profile__name, 
+.dark .profile__company,
+.dark .profileitem__skill,
+.dark .profileabout,
+.dark .profileeducation,
+.dark .profile-edu .text-primary,
+.dark .profile-edu p,
+.dark .profile-exp .text-primary,
+.dark .profile-exp p,
+.dark .bg-white .text-primary,
+.dark .profile-github p,
+.dark .dash-buttons i {
+  color: black;
+}
+
 a {
   color: var(--primary-color);
   text-decoration: none;

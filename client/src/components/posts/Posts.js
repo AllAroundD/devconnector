@@ -19,7 +19,6 @@ const Posts = ({ getPosts, post: { posts, loading }}) => {
             </p>
             <PostForm />
             <div className="posts">
-                {/* {console.log('posts', posts)} */}
                 {posts.map(post => (
                     <PostItem key={post._id} post={post} />   
                 ))}
