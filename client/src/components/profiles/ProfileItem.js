@@ -15,9 +15,9 @@ const ProfileItem = ({
         <div className="profile bg-light">
             <img src={avatar} alt="avatar" className="round-img" />
             <div>
-                <h2>{name}</h2>
-                <p>{status} {company && <span> at {company}</span>}</p>
-                <p className="my-1">{location && <span>{location}</span>}</p>
+                <h2 className="profile__name">{name}</h2>
+                <p className="profile__company">{status} {company && <span> at {company}</span>}</p>
+                <p className="my-1 profile__location">{location && <span>{location}</span>}</p>
                 <Link to={`/profile/${_id}`} className="btn btn-primary">
                     View Profile
                 </Link>
@@ -25,7 +25,7 @@ const ProfileItem = ({
             <ul>
                 {/* just show max 4 skills */}
                 {skills.slice(0,4).map((skill, index) => (
-                    <li key={index} className="text-primary">
+                    <li key={index} className="text-primary profileitem__skill">
                         <i className="fas fa-check"></i> {skill}
                     </li>
                 ))}

@@ -1,25 +1,44 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { logout } from '../../actions/auth'
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+
+    const [darkMode, setDarkMode] = useState(false)
+
+    useEffect(() => {
+      const json = localStorage.getItem("devconnector_darkmode")
+      const currentMode = JSON.parse(json)
+      if (currentMode) {
+        setDarkMode(true)
+      } else {
+        setDarkMode(false)
+      }
+    }, [])
+
+    useEffect(() => {
+        if (darkMode) {
+          document.body.classList.add("dark")
+        } else {
+          document.body.classList.remove("dark")
+        }
+        const json = JSON.stringify(darkMode)
+        localStorage.setItem("devconnector_darkmode", json)
+      }, [darkMode])
+
     const authLinks = (
         <ul>
             <li>
-                <Link to='/profiles'>
-                    Developers
-                </Link>
+                <Link to='/profiles'>Developers</Link>
             </li>
             <li>
-                <Link to='/posts'>
-                    Posts
-                </Link>
+                <Link to='/posts'>Posts</Link>
             </li>
             <li>
-                <i className="fas fa-user"></i>{' '}
                 <Link to='/dashboard'>
+                    <i className="fas fa-user"></i>{' '}
                     <span className="hide-sm">Dashboard</span>
                 </Link>
             </li>
@@ -29,15 +48,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                     <span className="hide-sm">Logout</span>
                 </a>
             </li>
+            <li>
+                <a href="#!" onClick={() => setDarkMode(!darkMode)} >
+                    <i class="fas fa-adjust"></i>
+                </a>
+            </li>
         </ul> 
     )
 
     const guestLinks = (
         <ul>
             <li>
-                <Link to='/profiles'>
-                    Developers
-                </Link>
+                <Link to='/profiles'>Developers</Link>
             </li>
             <li>
                 <Link to='/register'>Register</Link>
@@ -71,5 +93,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, { logout })(Navbar)
-
-

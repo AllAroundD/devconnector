@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '../utils/api'
 import { setAlert } from './alert'
 import {
     REGISTER_SUCCESS,
@@ -19,7 +19,7 @@ export const loadUser = () => async dispatch => {
         setAuthToken(localStorage.token)
     }
     try {
-        const res = await axios.get('/api/auth')
+        const res = await api.get('/auth')
 
         dispatch({
             type: USER_LOADED,
@@ -35,17 +35,9 @@ export const loadUser = () => async dispatch => {
 
 
 // Register User
-export const register = ({ name, email, password }) => async dispatch => {
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-
-    const body = JSON.stringify({ name, email, password })
-
+export const register = formData => async dispatch => {
     try {
-        const res = await axios.post('/api/users', body, config) 
+        const res = await api.post('/users', formData) 
         
         dispatch({
             type: REGISTER_SUCCESS,
@@ -67,16 +59,10 @@ export const register = ({ name, email, password }) => async dispatch => {
 
 // Login User
 export const login = ( email, password ) => async dispatch => {
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-
-    const body = JSON.stringify({ email, password })
+    const body = { email, password }
 
     try {
-        const res = await axios.post('/api/auth', body, config) 
+        const res = await api.post('/auth', body) 
         
         dispatch({
             type: LOGIN_SUCCESS,
