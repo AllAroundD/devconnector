@@ -5,6 +5,10 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --darkmodeset-color: #545657;
+  --darkmodelight-color: #e0dddd;
+  --dark-primary-color: #106e7c;
+
 }
 
 * {
@@ -21,35 +25,9 @@ body {
   color: #333;
 }
 
-.dark {
-  background: black;
-}
-
-.dark h1, 
-.dark h2, 
-.dark p, 
-.dark .text-primary,
-.dark .large,
-.dark tbody,
-.dark .profile-github .text-primary,
-.dark .lead .fa-user {
-  color: white;
-}
-
-.dark .my-1, 
-.dark .profile__name, 
-.dark .profile__company,
-.dark .profileitem__skill,
-.dark .profileabout,
-.dark .profileeducation,
-.dark .profile-edu .text-primary,
-.dark .profile-edu p,
-.dark .profile-exp .text-primary,
-.dark .profile-exp p,
-.dark .bg-white .text-primary,
-.dark .profile-github p,
-.dark .dash-buttons i {
-  color: black;
+.navbar__avatar {
+  display: flex;
+  align-items: center;
 }
 
 a {
@@ -64,6 +42,51 @@ ul {
 img {
   width: 100%;
 }
+
+/* Dark mode */
+.dark {
+  background: var(--dark-color);
+}
+
+.dark .btn-dark,
+.dark .bg-primary,
+.dark .btn-primary {
+  background-color: var(--dark-primary-color);
+}
+
+.dark .table th {
+  /* background-color: var(--darkmodelight-color); */
+  background-color: var(--darkmodeset-color);
+}
+
+.dark .lead .fa-user,
+.dark .lead span,
+.dark .my-2,
+.dark .table th,
+.dark .table tbody,
+.dark small {
+  color: var(--light-color);
+}
+
+.dark .profile-edu .text-primary,
+.dark .profile-exp .text-primary,
+.dark .bg-white .text-primary,
+.dark .bg-light .text-primary,
+.dark .large .text-primary,
+.dark .dash-buttons i
+{
+  color: var(--dark-primary-color);
+}
+
+.dark__setting {
+  background-color: var(--dark-color);
+  border-radius: 10%;
+}
+
+.dark .dark__setting {
+  background-color: var(--darkmodeset-color);
+}
+
 
 /* Utilities */
 .container {
@@ -168,6 +191,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 4%;
 }
 
 .badge {
@@ -238,6 +262,10 @@ img {
 
 .btn:hover {
   opacity: 0.8;
+}
+
+.dash-buttons .btn {
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
 
 .bg-light,
@@ -319,6 +347,10 @@ button {
   color: #0077b5;
 }
 
+.table {
+  width: 100%;
+  /* border: 1px solid black; */
+}
 .table th,
 .table td {
   padding: 1rem;
@@ -594,8 +626,14 @@ button {
 
   .dash-buttons a {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     margin-bottom: 0.2rem;
+  }
+  .dash-buttons .btn {
+    /* display: flex; */
+    width: 40%;
+    /* align-items: center; */
+    /* text-align: center; */
   }
 
   .post {

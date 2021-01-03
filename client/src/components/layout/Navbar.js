@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { logout } from '../../actions/auth'
+import Tooltip from '@material-ui/core/Tooltip'
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
 
     const [darkMode, setDarkMode] = useState(false)
 
@@ -37,21 +38,32 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <Link to='/posts'>Posts</Link>
             </li>
             <li>
-                <Link to='/dashboard'>
-                    <i className="fas fa-user"></i>{' '}
-                    <span className="hide-sm">Dashboard</span>
-                </Link>
+                <Tooltip title="View Your Dashboard" arrow>
+                    <Link to='/dashboard'>
+                        <i className="fas fa-user"></i>{' '}
+                        {/* <div className="navbar__avatar"> */}
+                            {/* <img className="round-img my-1" src={user.avatar} alt="avatar" style={{height: '20px', width: '20px' }}></img>{' '} */}
+                            <span className="hide-sm">Dashboard</span>
+                        {/* </div> */}
+                    </Link>
+                </Tooltip>
             </li>
             <li>
-                <a href="#!" onClick={logout} >
-                    <i className="fas fa-sign-out-alt"></i>{' '}
-                    <span className="hide-sm">Logout</span>
-                </a>
+                <Tooltip title="Logout" arrow>
+                    <a href="#!" onClick={logout} >
+                        <i className="fas fa-sign-out-alt"></i>{' '}
+                        <span className="hide-sm">Logout</span>
+                    </a>
+                </Tooltip>
             </li>
             <li>
-                <a href="#!" onClick={() => setDarkMode(!darkMode)} >
-                    <i class="fas fa-adjust"></i>
-                </a>
+                <div className="dark__setting">
+                    <Tooltip title="Toggle Dark Mode" arrow>
+                        <a href="#!" onClick={() => setDarkMode(!darkMode)} >
+                            <i class="fas fa-adjust "></i>
+                        </a>
+                    </Tooltip>
+                </div>
             </li>
         </ul> 
     )
@@ -67,6 +79,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <li>
                 <Link to='/login'>Login</Link>
             </li>
+            <li>
+                <a href="#!" onClick={() => setDarkMode(!darkMode)} >
+                    <i class="fas fa-adjust"></i>
+                </a>
+            </li>
         </ul> 
     )
 
@@ -77,7 +94,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                     <i className="fas fa-code"></i> DevConnector
                 </Link>
             </h1>
-            { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>)}
+            {/* { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>)} */}
+            <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>
         </nav>
 
     )
