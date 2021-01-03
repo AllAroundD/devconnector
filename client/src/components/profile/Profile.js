@@ -37,6 +37,7 @@ const Profile = ({
                         )
                     }
                     <div className="profile-grid my-1">
+                    {/* <div className="profile-grid my-1" style={{border: "1px solid black"}}> */}
                         <ProfileTop profile={profile} />
                         <ProfileAbout profile={profile} />
                         <div className="profile-exp bg-white p-2">
