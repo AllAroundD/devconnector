@@ -79,6 +79,10 @@ img {
   color: var(--dark-primary-color);
 }
 
+.dark .profile .my-1 span {
+  color: var(--dark-color);
+}
+
 .dark__setting {
   background-color: var(--dark-color);
   border-radius: 10%;
