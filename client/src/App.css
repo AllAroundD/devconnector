@@ -318,6 +318,19 @@ img {
   border: 1px solid #ccc;
 }
 
+.login__form input[type='text'],
+.login__form input[type='email'],
+.login__form input[type='password'],
+.register__form input[type='text'],
+.register__form input[type='email'],
+.register__form input[type='password'] {
+  display: block;
+  width: 70%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
 .form input[type='submit'],
 button {
   font: inherit;
@@ -640,6 +653,18 @@ button {
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
+  }
+  .login__form input[type='text'],
+  .login__form input[type='email'],
+  .login__form input[type='password'],
+  .register__form input[type='text'],
+  .register__form input[type='email'],
+  .register__form input[type='password'] {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
   }
 }
 
