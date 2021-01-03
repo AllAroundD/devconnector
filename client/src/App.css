@@ -76,12 +76,14 @@ img {
 .dark .bg-white .text-primary,
 .dark .bg-light .text-primary,
 .dark .large .text-primary,
-.dark .dash-buttons i
+.dark .dash-buttons i,
+.dark .btn-primary span
 {
   color: var(--dark-primary-color);
 }
 
-.dark .profile .my-1 span {
+.dark .profile .my-1 span,
+.dark .btn-light span {
   color: var(--dark-color);
 }
 
