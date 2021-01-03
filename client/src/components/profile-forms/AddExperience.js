@@ -35,9 +35,9 @@ const AddExperience = ({ addExperience, history }) => {
         <Fragment>
             <h1 className="large text-primary">Add An Experience</h1>
             <p className="lead">
-                <i className="fas fa-code-branch"></i> 
+                <span><i className="fas fa-code-branch"></i> 
                 Add any developer/programming positions that you have had 
-                in the past
+                in the past</span>
             </p>
             <small>* = required field</small>
             <form className="form" onSubmit={e => {
@@ -95,7 +95,7 @@ const AddExperience = ({ addExperience, history }) => {
                                 toggleDisabled(!toDateDisabled)
                             }}
                         /> 
-                        {' '} Current Job
+                        {' '} <span>Current Job</span>
                     </p>
                 </div>
                     <div className="form-group">

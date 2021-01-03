@@ -65,7 +65,9 @@ img {
 .dark .my-1 span,
 .dark .table th,
 .dark .table tbody,
-.dark small {
+.dark small,
+.dark .form-group h4,
+.dark .form-group span {
   color: var(--light-color);
 }
 
