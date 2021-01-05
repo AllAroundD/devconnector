@@ -36,7 +36,7 @@ If installing locally, see the installation steps above to install and then run 
 Dev Connector is a small social network app (for developers) that includes authentication, profiles and forum posts.
 
 Here is an example of the application in action:
-![Dev Connector demo](./public/assets/img/devconnector-demo.gif)
+![Dev Connector demo](./client/public/assets/img/devconnector-demo.gif)
 
 ## License
 
