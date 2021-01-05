@@ -19,19 +19,23 @@ Once the user adds their Github id to their profile, the github API is able to p
 
 ## Installation
 
-For just using the application, there is no installation required. The application url is .
+For just using the application, there is no installation required. The application url is https://devconnector-dm.herokuapp.com/.
 For the local setup of this application, there are a few npm modules that are required (default.json, axios, etc.). Once the repository is cloned, typing 'npm install' at the command prompt will install all of the required modules.
 This application requires the MongoDB client (https://www.mongodb.com/download-center#community) to be installed.
 A 'default.json' file will need to be created in the config folder of the application after cloning for the local connection info, with a mongoURI string to the mongo DB. The default.json config file should be added to .gitignore. If git has been previously tracking your default.json file then run the following...
-git rm --cached config/default.json
+
+> git rm --cached config/default.json
+
 You can get an access token by following [these instructions](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line). For this app, you don't need to add any permissions so don't select any in the scopes. DO NOT SHARE ANY TOKENS THAT HAVE PERMISSIONS. This would leave your account or repositories vulnerable, depending on permissions set.
 Then add your token to the config file and confirm that the file is untracked with git status before pushing to GitHub.
 Once you run the program by typing 'npm run dev', the node server will be listening on port 5000 and browser window will open and the app will listen on port 3000.
 
 ## Usage
 
-For just using the application, the application url (TBD) is where the application resides.
-If installing locally, see the installation steps above to install and then run the node server by typing 'npm run dev'.
+For just using the application, the [application url](https://devconnector-dm.herokuapp.com/) is where the application resides.
+If installing locally, see the installation steps above to install and then run the node server by typing the following command.
+
+> npm run dev
 
 Dev Connector is a small social network app (for developers) that includes authentication, profiles and forum posts.
 
