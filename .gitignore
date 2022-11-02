@@ -6,6 +6,8 @@ exports/
 
 client/build
 resources/
+
 # misc
+.env
 .DS_Store
 client/.eslintcache
