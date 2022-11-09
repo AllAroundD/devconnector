@@ -1,13 +1,11 @@
 node_modules/
-client/node_modules/
-config/default.json
-config/production.json
 exports/
 
-client/build
+build/
 resources/
 
 # misc
+info.txt
 .env
 .DS_Store
-client/.eslintcache
+.eslintcache
