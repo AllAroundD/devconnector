@@ -19,7 +19,7 @@ Once the user adds their Github id to their profile, the github API is able to p
 
 ## Installation
 
-For just using the application, there is no installation required. The application url is https://devconnector-dm.herokuapp.com/.
+For just using the application, there is no installation required. The application url is https://devconnector-dm.vercel.app/.
 For the local setup of this application, there are a few npm modules that are required (default.json, axios, etc.). Once the repository is cloned, typing 'npm install' at the command prompt will install all of the required modules.
 This application requires the MongoDB client (https://www.mongodb.com/download-center#community) to be installed.
 A 'default.json' file will need to be created in the config folder of the application after cloning for the local connection info, with a mongoURI string to the mongo DB. The default.json config file should be added to .gitignore. If git has been previously tracking your default.json file then run the following...
@@ -32,7 +32,7 @@ Once you run the program by typing 'npm run dev', the node server will be listen
 
 ## Usage
 
-For just using the application, the [application url](https://devconnector-dm.herokuapp.com/) is where the application resides.
+For just using the application, the [application url](https://devconnector-dm.vercel.app/) is where the application resides.
 If installing locally, see the installation steps above to install and then run the node server by typing the following command.
 
 > npm run dev
@@ -40,7 +40,7 @@ If installing locally, see the installation steps above to install and then run 
 Dev Connector is a small social network app (for developers) that includes authentication, profiles and forum posts.
 
 Here is an example of the application in action:
-![Dev Connector demo](./client/public/assets/img/devconnector-demo.gif)
+![Dev Connector demo](./public/assets/img/devconnector-demo.gif)
 
 ## License
 
