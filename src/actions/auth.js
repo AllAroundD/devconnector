@@ -14,9 +14,9 @@ import setAuthToken from "../utils/setAuthToken";
 
 // Load User
 export const loadUser = () => async (dispatch) => {
-  if (localStorage.token) {
+  if (localStorage.devconnector_token) {
     // set the token with the header
-    setAuthToken(localStorage.token);
+    setAuthToken(localStorage.devconnector_token);
   }
   try {
     const res = await api.get(`${process.env.REACT_APP_API}/auth`);

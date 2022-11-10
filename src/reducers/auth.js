@@ -8,9 +8,10 @@ import {
   LOGOUT,
   ACCOUNT_DELETED,
 } from "../actions/types";
+import { DC_TOKEN } from "../utils/constants";
 
 const initialState = {
-  token: localStorage.getItem("token"),
+  token: localStorage.getItem(DC_TOKEN),
   isAuthenticated: null,
   loading: true,
   user: null,
